@@ -17,7 +17,7 @@ public class ExceptionController {
 
     @ExceptionHandler(Throwable.class)
     public HttpEntity handleGlobalException(final Throwable t) {
-        log.error("Unable to process request.", t);
+//        log.error("Unable to process request.", t);
         return new ResponseEntity(SERVICE_UNAVAILABLE);
     }
 

@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpEntity;
@@ -12,6 +13,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +30,8 @@ import static org.springframework.http.HttpStatus.OK;
 @Secured("USER")
 public class AirportController {
 
-    private final AirportRepository repository;
+	@Autowired
+    private AirportRepository repository;
 
     @GetMapping
     public Callable<PagedModel<EntityModel<Location>>> list(

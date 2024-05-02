@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,8 @@ import static java.util.Locale.ENGLISH;
 @Secured("USER")
 public class FareController {
 
-    private final AirportRepository repository;
+	@Autowired
+    private AirportRepository repository;
 
     @GetMapping
     public Callable<Fare> calculateFare(@PathVariable("origin") final String origin,

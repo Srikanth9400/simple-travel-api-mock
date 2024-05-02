@@ -16,5 +16,27 @@ public class Location {
     private Coordinates coordinates;
     private Location parent;
     private Set<Location> children;
+    
+	public String getCode() {
+		return code;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public Coordinates getCoordinates() {
+		return coordinates;
+	}
+	public Location getParent() {
+		return parent;
+	}
+	public Set<Location> getChildren() {
+		return children;
+	}
+    
+
+    
 
 }

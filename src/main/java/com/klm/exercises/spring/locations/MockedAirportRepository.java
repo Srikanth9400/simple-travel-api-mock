@@ -61,7 +61,7 @@ public class MockedAirportRepository implements AirportRepository {
 
     private Map<String, Location> parseMockData(final String lang) {
         try {
-            log.info("Loading static resources from classpath and populating mocks.");
+//            log.info("Loading static resources from classpath and populating mocks.");
             final List<Location> locations = mapper.readValue(
                             new ClassPathResource("locations_".concat(lang).concat(".json")).getInputStream(),
                             mapper.getTypeFactory().constructCollectionType(ArrayList.class, Location.class));
